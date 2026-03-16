@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="my" class="scroll-smooth scroll-pt-20">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shine Wunna Aung - Portfolio</title>
+    
+    <!-- SEO & Social Media Meta Tags -->
+    <meta name="description" content="Shine Wunna Aung ၏ Personal Portfolio။ Sales & Marketing Specialist, E-commerce Team Lead, နှင့် Graphic Designer။">
+    <meta property="og:title" content="Shine Wunna Aung - Portfolio">
+    <meta property="og:description" content="လုပ်ငန်းအတွေ့အကြုံ (၈) နှစ်ကျော်ရှိသော Sales & Marketing Specialist နှင့် E-commerce Team Lead ၏ Portfolio">
+    <meta property="og:type" content="website">
+    
+    <!-- Day/Night Mode Initialization Script -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+
+    <!-- Tailwind CSS ကို CDN မှတဆင့် အသုံးပြုခြင်း -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts (Poppins) ကို အသုံးပြုခြင်း -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (Icons များအတွက်) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Configuration (အရောင်နှင့် ဖောင့်များကို စိတ်ကြိုက်ပြင်ဆင်ခြင်း) -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Add dark mode toggling support
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3b82f6', // အပြာရောင်
+                        dark: '#0f172a',    // နောက်ခံ အမည်း/ခဲရောင်
+                        card: '#1e293b'     // Card များအတွက် အရောင်
+                    },
+                    animation: {
+                        blob: "blob 7s infinite",
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Base Background (Smooth Transition) */
+        body {
+            background-color: #f8fafc; /* iOS Light Background */
+            color: #0f172a;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        html.dark body {
+            background-color: #020617; /* iOS Dark Background */
+            color: #f8fafc;
+        }
+
+        /* လှပသော Scrollbar လေးထည့်ခြင်း */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        html.dark ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+        }
+        
+        /* iOS Glassmorphism Effect (Day & Night) */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: saturate(180%) blur(24px);
+            -webkit-backdrop-filter: saturate(180%) blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            transition: background 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
+        }
+        html.dark .glass-panel {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Smart Text Color Flipping for Light Mode (No need to change HTML classes) */
+        html:not(.dark) .text-white { color: #0f172a; }
+        html:not(.dark) .bg-primary, html:not(.dark) .bg-primary * { color: #ffffff !important; }
+        html:not(.dark) .text-gray-400 { color: #475569; }
+        html:not(.dark) .text-gray-300 { color: #334155; }
+        
+        /* Borders and Backgrounds adjustments for Light Mode */
+        html:not(.dark) .border-gray-800, html:not(.dark) .border-white\/10 { border-color: rgba(0, 0, 0, 0.08); }
+        html:not(.dark) .bg-white\/5, html:not(.dark) .bg-gray-800, html:not(.dark) .bg-gray-700 { background-color: rgba(0, 0, 0, 0.04); }
+        
+        /* Specific Colors & Orbs */
+        html:not(.dark) .text-yellow-400 { color: #d97706; }
+        html:not(.dark) .text-green-400 { color: #15803d; }
+        html:not(.dark) .bg-green-500\/20 { background-color: rgba(34, 197, 94, 0.15); }
+        html:not(.dark) .bg-blue-900\/10 { background-color: rgba(59, 130, 246, 0.1); }
+        html:not(.dark) .bg-blue-900\/20 { background-color: rgba(59, 130, 246, 0.15); }
+        html:not(.dark) .border-blue-800\/30 { border-color: rgba(59, 130, 246, 0.2); }
+        html:not(.dark) .bg-blue-600\/20 { background-color: rgba(59, 130, 246, 0.4); }
+        html:not(.dark) .bg-purple-600\/20 { background-color: rgba(147, 51, 234, 0.3); }
+        html:not(.dark) .border-yellow-500\/30 { border-color: rgba(234, 179, 8, 0.5); }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-white relative">
+
+    <!-- နောက်ခံ Glassmorphism Effect များအတွက် အလင်းရောင် (Glowing Orbs) -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[120px] animate-blob"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-purple-600/20 rounded-full blur-[120px] animate-blob" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- Navigation Bar (အပေါ်ဆုံးမှ မီနူးတန်း) -->
+    <nav class="fixed w-full z-50 glass-panel border-b-0 border-l-0 border-r-0 border-t-0 rounded-none transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">
+                        Wunna's Portfolio
+                    </a>
+                </div>
+                <!-- Desktop Menu & Theme Toggle -->
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:flex space-x-8 mr-2 items-center">
+                        <a href="#home" class="text-gray-300 hover:text-primary transition-colors">ပင်မစာမျက်နှာ</a>
+                        <a href="#about" class="text-gray-300 hover:text-primary transition-colors">ကျွန်တော့်အကြောင်း</a>
+                        <a href="#projects" class="text-gray-300 hover:text-primary transition-colors">လက်ရာများ</a>
+                        <a href="#pricing" class="text-gray-300 hover:text-primary transition-colors font-medium border-b-2 border-transparent hover:border-primary pb-1">စျေးနှုန်းများ</a>
+                        <a href="#contact" class="text-gray-300 hover:text-primary transition-colors">ဆက်သွယ်ရန်</a>
+                    </div>
+                    
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-gray-400 hover:text-primary transition-all shadow-sm">
+                        <i id="theme-icon" class="fa-solid fa-moon"></i>
+                    </button>
+
+                    <!-- Mobile Menu Toggle Button (Hamburger) -->
+                    <button id="mobile-menu-btn" class="md:hidden w-10 h-10 rounded-full glass-panel flex items-center justify-center text-gray-400 hover:text-primary transition-all shadow-sm">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t-0 border-l-0 border-r-0 border-b border-white/10 w-full flex-col shadow-lg absolute top-16 left-0 pb-4 pt-2 px-4 transition-all duration-300 origin-top">
+            <a href="#home" class="mobile-link text-gray-300 hover:text-primary hover:bg-white/5 transition-colors block text-center font-medium py-3 rounded-lg">ပင်မစာမျက်နှာ</a>
+            <a href="#about" class="mobile-link text-gray-300 hover:text-primary hover:bg-white/5 transition-colors block text-center font-medium py-3 rounded-lg">ကျွန်တော့်အကြောင်း</a>
+            <a href="#projects" class="mobile-link text-gray-300 hover:text-primary hover:bg-white/5 transition-colors block text-center font-medium py-3 rounded-lg">လက်ရာများ</a>
+            <a href="#pricing" class="mobile-link text-gray-300 hover:text-primary hover:bg-white/5 transition-colors block text-center font-medium py-3 rounded-lg">စျေးနှုန်းများ</a>
+            <a href="#contact" class="mobile-link text-gray-300 hover:text-primary hover:bg-white/5 transition-colors block text-center font-medium py-3 rounded-lg">ဆက်သွယ်ရန်</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (အဖွင့်စာမျက်နှာ) -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up" data-aos-duration="1000">
+            <!-- စာသားများ -->
+            <div>
+                <p class="text-primary font-medium tracking-wide mb-2" data-aos="fade-down" data-aos-delay="200">မင်္ဂလာပါခင်ဗျာ၊ ကျွန်တော်ကတော့</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight" data-aos="zoom-in" data-aos-delay="400">
+                    <span class="text-white">Shine Wunna Aung</span> ဖြစ်ပါတယ်။
+                </h1>
+                <h2 class="text-xl md:text-2xl text-gray-400 mb-6 font-medium leading-relaxed" data-aos="fade-up" data-aos-delay="600">
+                    <span class="text-primary font-semibold">Sales & Marketing Specialist</span> <br class="md:hidden">
+                    <span class="hidden md:inline mx-2 text-gray-600">|</span> E-commerce Team Lead <br class="md:hidden">
+                    <span class="hidden md:inline mx-2 text-gray-600">|</span> Graphic Designer
+                </h2>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="800">
+                    IT နယ်ပယ်၏ နာမည်ကြီး Company တစ်ခုဖြစ်သော Shwe Lamin Nagar Company Limited တွင် အသက် (၂၀) အရွယ်ကတည်းက စတင်ဝင်ရောက်လုပ်ကိုင်ခဲ့ပြီး ယခုဆိုလျှင် Sales & Marketing လောက၌ လုပ်ငန်းအတွေ့အကြုံ (၈) နှစ်ကျော် ရှိပြီဖြစ်ပါသည်။ လက်ရှိတွင် E-commerce Team Lead တာဝန်နှင့်အတူ "RIVACASE" ဂျာမနီ Brand ၏ Brand တာဝန်ခံအနေဖြင့်ပါ ပူးတွဲဆောင်ရွက်လျက်ရှိပါသည်။
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="1000">
+                    <a href="#contact" class="px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] text-center hover:-translate-y-1 duration-300">
+                        ဆက်သွယ်ရန်
+                    </a>
+                    <a href="#projects" class="px-8 py-3 bg-transparent border border-white/20 text-white font-medium rounded-lg hover:bg-white/5 transition-all text-center hover:-translate-y-1 duration-300">
+                        လက်ရာများကြည့်ရန်
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (မိမိအကြောင်း) -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up"><span class="text-primary">ကျွန်တော့်</span> အကြောင်း</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Sales, Marketing & E-commerce Expert</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        မင်္ဂလာပါ။ ကျွန်တော်ကတော့ အဓိကအားဖြင့် Sales & Marketing Specialist နှင့် Graphic Designer တစ်ဦးဖြစ်ပါတယ်။ IT နယ်ပယ်ရဲ့ နာမည်ကြီး ကုမ္ပဏီတစ်ခုဖြစ်တဲ့ Shwe Lamin Nagar Company Limited မှာ အသက် (၂၀) အရွယ်ကတည်းက စတင်ဝင်ရောက်လုပ်ကိုင်ခဲ့ပြီး ယခုဆိုလျှင် လုပ်ငန်းအတွေ့အကြုံ (၈) နှစ်ကျော် ရှိပြီဖြစ်ပါတယ်။ လက်ရှိမှာ မိခင်ကုမ္ပဏီရဲ့ E-commerce Team Lead အနေနဲ့ Official Store Website တွေမှာ Key Account Management ကို တာဝန်ယူ ဦးဆောင်နေသလို၊ RIVACASE (ဂျာမနီ Brand) ကို တင်သွင်းပြီး Brand တာဝန်ခံအနေနဲ့ပါ ပူးတွဲ ဆောင်ရွက်လျက်ရှိပါတယ်။<br><br>
+                        ရန်ကုန်မြို့တွင် အဓိက အခြေစိုက်ပြီး၊ ၂၀၂၄ - ၂၀၂၅ ခုနှစ်များတွင် ထိုင်းနိုင်ငံ၊ ဘန်ကောက်မြို့၌ ကျောင်းတက်နေစဉ် <strong>"Midori JLC Thailand"</strong> တွင် Co-Founder နှင့် Director of Marketing အဖြစ် ၅ လခန့် ကူညီတည်ဆောက်ပေးခဲ့ကာ Graphic Design နှင့် Catalog များကို ကိုယ်တိုင် ဖန်တီးရေးဆွဲခဲ့ပါတယ်။ ဘန်ကောက်မှာ ရှိနေစဉ်ကာလအတွင်း ရန်ကုန်ရှိ မိခင်ကုမ္ပဏီမှ E-commerce Lead တာဝန်များကိုလည်း Remote အနေဖြင့် ဆက်လက် Manage လုပ်ပေးခဲ့ပါတယ်။ ထို့နောက် ရန်ကုန်သို့ ပြန်လည်ရောက်ရှိချိန်တွင် မိခင်ကုမ္ပဏီကို ပြန်လည် ချဲ့ထွင် လုပ်ကိုင်လျက်ရှိပါတယ်။ (လက်ရှိတွင် Mascot ပုံများကိုလည်း အထူးပြု ရေးဆွဲနေပါသည်)။
+                    </p>
+                    <!-- Skills Bar -->
+                    <div class="space-y-4" data-aos="fade-up" data-aos-delay="300">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-300">Sales, Marketing & Key Account Management</span>
+                                <span class="text-sm font-medium text-primary">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-300">Graphic Design, Catalog & Mascot</span>
+                                <span class="text-sm font-medium text-primary">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-300">E-commerce Team Management</span>
+                                <span class="text-sm font-medium text-primary">95%</span>
+                            </div>
+                            <div class="w-full bg-white/5 rounded-full h-2 overflow-hidden">
+                                <div class="bg-primary h-2 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.6)]" style="width: 95%" data-aos="slide-right" data-aos-duration="1500"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-center" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="p-6 glass-panel rounded-xl hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-briefcase text-4xl text-primary mb-4 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]"></i>
+                        <h4 class="text-xl font-bold text-white mb-2">8+ နှစ်</h4>
+                        <p class="text-gray-400 text-sm">လုပ်ငန်းအတွေ့အကြုံ</p>
+                    </div>
+                    <div class="p-6 glass-panel rounded-xl hover:-translate-y-2 transition-transform duration-300">
+                        <i class="fa-solid fa-handshake text-4xl text-primary mb-4 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]"></i>
+                        <h4 class="text-xl font-bold text-white mb-2">100%</h4>
+                        <p class="text-gray-400 text-sm">Client ကျေနပ်မှု</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (လက်ရာများ) -->
+    <section id="projects" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-up">ပြီးစီးခဲ့သော <span class="text-primary">လက်ရာများ</span></h2>
+            
+            <!-- Viber Note -->
+            <div class="max-w-3xl mx-auto mb-12 p-6 glass-panel rounded-xl text-center border-blue-500/20" data-aos="zoom-in" data-aos-delay="200">
+                <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+                    <i class="fa-brands fa-viber text-primary text-xl mr-2 mb-2 sm:mb-0 drop-shadow-[0_0_5px_rgba(59,130,246,0.6)]"></i>
+                    Project Design ပုံများနှင့် အသေးစိတ် လက်ရာများကို ကြည့်ရှုလိုပါက Viber <a href="viber://chat?number=%2B959408317700" class="text-white font-bold hover:text-primary transition-colors underline decoration-primary underline-offset-4">(+95 940 831 7700)</a> သို့ တိုက်ရိုက် ဆက်သွယ် မေးမြန်းနိုင်ပါသည်။
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="glass-panel rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 group p-8 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-bold text-white mb-4">RIVACASE Myanmar</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">၂၀၂၂ ခုနှစ်မှ ၂၀၂၄ ခုနှစ်အထိ RIVACASE Myanmar Facebook Page အတွက် Art Design များအားလုံးကို ကိုယ်တိုင် အထူးပြု ဖန်တီးရေးဆွဲခဲ့ပါသည်။</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 text-xs bg-white/5 border border-white/10 text-primary rounded-md font-medium">Graphic Design</span>
+                        <span class="px-3 py-1.5 text-xs bg-white/5 border border-white/10 text-primary rounded-md font-medium">Social Media Art</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="glass-panel rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 group p-8 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-bold text-white mb-4">Midori JLC (Thailand)</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Bangkok မြို့တွင် Co-Founder နှင့် Director of Marketing အဖြစ် ၅ လခန့် တာဝန်ယူတည်ဆောက်ခဲ့ပြီး Graphic Design နှင့် Catalog များ ရေးဆွဲခဲ့ပါသည်။</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 text-xs bg-white/5 border border-white/10 text-primary rounded-md font-medium">Marketing & Branding</span>
+                        <span class="px-3 py-1.5 text-xs bg-white/5 border border-white/10 text-primary rounded-md font-medium">Catalog Design</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="glass-panel rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 group p-8 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="text-xl font-bold text-white mb-4">E-commerce Stores & Acer</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Official Store Website များတွင် Key Account Management ကို ဦးဆောင်နေပြီး "RIVACASE" (ဂျာမနီ Brand) ကို တင်သွင်းကာ Brand တာဝန်ခံအနေဖြင့်ပါ ပူးတွဲဆောင်ရွက်လျက်ရှိပါသည်။ "Acer For All" Page အတွက်လည်း Design များ ရေးဆွဲပေးခဲ့ပါသည်။</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 text-xs bg-white/5 border border-white/10 text-primary rounded-md font-medium">E-commerce Lead</span>
+                        <span class="px-3 py-1.5 text-xs bg-white/5 border border-white/10 text-primary rounded-md font-medium">Key Account</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section (စျေးနှုန်းများ) -->
+    <section id="pricing" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-6">ဝန်ဆောင်မှု <span class="text-primary">စျေးနှုန်းများ</span></h2>
+                <p class="text-gray-300 leading-relaxed mb-4 text-left md:text-center italic">"I am dedicated to delivering modern, high-quality work that resonates with your audience and meets your business goals."</p>
+            </div>
+            
+            <!-- 1. Logo & Brand Identity Packages -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-white mb-2 text-center" data-aos="fade-up">1. Logo & Brand Identity Packages <span class="text-primary text-lg">(THB)</span></h3>
+                <p class="text-gray-400 text-center mb-10" data-aos="fade-up">အစပျိုးလုပ်ငန်းများအတွက် ခိုင်မာသော Brand ပုံရိပ်တစ်ခုကို စတင်လိုက်ပါ။</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Bronze -->
+                    <div class="glass-panel rounded-2xl p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300 border-t-4 border-orange-400/50" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="text-xl font-bold text-white mb-2 text-center">Bronze Package</h4>
+                        <div class="text-3xl font-bold text-primary text-center mb-6">1,500 <span class="text-lg text-gray-400 font-normal">THB</span></div>
+                        <ul class="space-y-4 flex-1 text-gray-300 text-sm">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <strong>1 Concept</strong> (Logo)</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <strong>1 Round</strong> of Revisions</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> High-Res PNG, JPG</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Profile & Cover Design</li>
+                        </ul>
+                    </div>
+                    <!-- Silver -->
+                    <div class="glass-panel rounded-2xl p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300 border-t-4 border-gray-300 relative scale-100 md:scale-105 shadow-[0_0_30px_rgba(59,130,246,0.15)]" data-aos="fade-up" data-aos-delay="300">
+                        <div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">Popular</div>
+                        <h4 class="text-xl font-bold text-white mb-2 text-center">Silver Package</h4>
+                        <div class="text-3xl font-bold text-primary text-center mb-6">2,500 <span class="text-lg text-gray-400 font-normal">THB</span></div>
+                        <ul class="space-y-4 flex-1 text-gray-300 text-sm">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <strong>2 Concepts</strong> (Logo)</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <strong>2 Rounds</strong> of Revisions</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Vector (AI, EPS) + High Res</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Profile & Cover Design</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Letterhead & Brochure</li>
+                        </ul>
+                    </div>
+                    <!-- Gold -->
+                    <div class="glass-panel rounded-2xl p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300 border-t-4 border-yellow-500/50" data-aos="fade-up" data-aos-delay="500">
+                        <h4 class="text-xl font-bold text-white mb-2 text-center">Gold Package</h4>
+                        <div class="text-3xl font-bold text-primary text-center mb-6">4,000 <span class="text-lg text-gray-400 font-normal">THB</span></div>
+                        <ul class="space-y-4 flex-1 text-gray-300 text-sm">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <strong>3 Concepts</strong> (Logo)</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <strong>3 Rounds</strong> of Revisions</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> All Files (SVG, AI, EPS, etc.)</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Full Marketing Kit</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Full Stationery Set</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Content & 3. Design Side by Side (for larger screens) or Stacked -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+                
+                <!-- Content Writing -->
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-bold text-white mb-2 flex items-center"><i class="fa-solid fa-pen-nib text-primary mr-3"></i> 2. Content Writing <span class="text-primary text-lg ml-2">(MMK)</span></h3>
+                    <p class="text-gray-400 mb-6 text-sm">ဖတ်သူကို ဆွဲဆောင်နိုင်ပြီး Brand အပေါ် ယုံကြည်မှုတိုးစေမယ့် စာသားများ။</p>
+                    <div class="space-y-4 mb-6">
+                        <div class="glass-panel p-5 rounded-xl flex justify-between items-center hover:border-primary/30 transition-colors">
+                            <div><div class="text-white font-bold">Starter (8 Posts)</div><div class="text-xs text-gray-400">တစ်ပတ် ၂ ပုဒ်နှုန်း</div></div>
+                            <div class="text-primary font-bold">100,000 MMK</div>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl flex justify-between items-center hover:border-primary/30 transition-colors">
+                            <div><div class="text-white font-bold">Growth (12 Posts)</div><div class="text-xs text-gray-400">တစ်ပတ် ၃ ပုဒ်နှုန်း</div></div>
+                            <div class="text-primary font-bold">170,000 MMK</div>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl flex justify-between items-center border border-primary/20 hover:border-primary/50 transition-colors">
+                            <div><div class="text-white font-bold">Professional (20 Posts)</div><div class="text-xs text-gray-400">တစ်ပတ် ၅ ပုဒ်နှုန်း</div></div>
+                            <div class="text-primary font-bold">280,000 MMK</div>
+                        </div>
+                    </div>
+                    <div class="bg-blue-900/10 border border-blue-800/30 p-4 rounded-lg text-sm text-gray-300">
+                        <span class="text-primary font-semibold">သီးသန့် (တစ်ပုဒ်ချင်း):</span> Standard Post - 15,000 MMK | Storytelling - 40,000 MMK
+                    </div>
+                </div>
+
+                <!-- Social Media Design -->
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-white mb-2 flex items-center"><i class="fa-solid fa-object-group text-primary mr-3"></i> 3. Social Media Design <span class="text-primary text-lg ml-2">(MMK)</span></h3>
+                    <p class="text-gray-400 mb-6 text-sm">သင့် Page ကို ခေတ်မှီပြီး မျက်စိပသာဒဖြစ်စေမယ့် Design များ။</p>
+                    <div class="space-y-4 mb-6">
+                        <div class="glass-panel p-5 rounded-xl flex justify-between items-center hover:border-primary/30 transition-colors">
+                            <div><div class="text-white font-bold">Starter (8 Designs)</div><div class="text-xs text-gray-400">Basic Package</div></div>
+                            <div class="text-primary font-bold">140,000 MMK</div>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl flex justify-between items-center hover:border-primary/30 transition-colors">
+                            <div><div class="text-white font-bold">Growth (12 Designs)</div><div class="text-xs text-gray-400">Standard Package</div></div>
+                            <div class="text-primary font-bold">220,000 MMK</div>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl flex justify-between items-center border border-primary/20 hover:border-primary/50 transition-colors">
+                            <div><div class="text-white font-bold">Professional (20 Designs)</div><div class="text-xs text-gray-400">Premium Package</div></div>
+                            <div class="text-primary font-bold">350,000 MMK</div>
+                        </div>
+                    </div>
+                    <div class="bg-blue-900/10 border border-blue-800/30 p-4 rounded-lg text-sm text-gray-300">
+                        <span class="text-primary font-semibold">သီးသန့် (တစ်ပုံချင်း):</span> 20,000 MMK ဝန်းကျင် <span class="text-xs text-gray-500">(Layout အပေါ်မူတည်၍)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. All-in-One Combo [BEST VALUE] -->
+            <div class="mb-20" data-aos="zoom-in">
+                <div class="glass-panel rounded-2xl p-1 border border-yellow-500/30 bg-gradient-to-br from-yellow-500/10 to-transparent">
+                    <div class="p-8 md:p-10">
+                        <div class="flex flex-col md:flex-row justify-center items-center mb-8 text-center md:text-left">
+                            <i class="fa-solid fa-star text-4xl text-yellow-500 mb-4 md:mb-0 md:mr-4 drop-shadow-[0_0_15px_rgba(234,179,8,0.6)]"></i>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">4. Social Combo (Content + Design)</h3>
+                                <p class="text-yellow-400 text-sm font-semibold tracking-wider mt-1">[ BEST VALUE PACKAGE ]</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-center mb-10 max-w-2xl mx-auto">စာရော ပုံရော တစ်ခါတည်း ပြီးပြတ်ချင်သော လုပ်ငန်းရှင်များအတွက် အထူးသက်သာသော Package များ။</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Combo 1 -->
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-colors">
+                                <h4 class="text-white font-bold mb-2">Starter Combo</h4>
+                                <p class="text-xs text-gray-400 mb-4">8 Posts + 8 Designs</p>
+                                <div class="text-2xl font-bold text-primary mb-2">220,000 <span class="text-sm">MMK</span></div>
+                                <div class="inline-block bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">20,000 သက်သာ</div>
+                            </div>
+                            <!-- Combo 2 -->
+                            <div class="bg-white/5 border border-yellow-500/30 rounded-xl p-6 text-center hover:bg-white/10 transition-colors relative shadow-[0_0_15px_rgba(234,179,8,0.1)]">
+                                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-dark text-xs font-bold px-3 py-1 rounded-full">Most Popular</div>
+                                <h4 class="text-white font-bold mb-2 mt-2">Growth Combo</h4>
+                                <p class="text-xs text-gray-400 mb-4">12 Posts + 12 Designs</p>
+                                <div class="text-2xl font-bold text-yellow-400 mb-2">330,000 <span class="text-sm">MMK</span></div>
+                                <div class="inline-block bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">40,000 သက်သာ</div>
+                            </div>
+                            <!-- Combo 3 -->
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-colors">
+                                <h4 class="text-white font-bold mb-2">Professional Combo</h4>
+                                <p class="text-xs text-gray-400 mb-4">20 Posts + 20 Designs</p>
+                                <div class="text-2xl font-bold text-primary mb-2">540,000 <span class="text-sm">MMK</span></div>
+                                <div class="inline-block bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">90,000 သက်သာ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Specialized Character & Sticker Services -->
+            <h3 class="text-2xl font-bold text-white mb-2 text-center" data-aos="fade-up">5. Specialized Character & Sticker Services <span class="text-primary text-lg">(MMK)</span></h3>
+            <p class="text-center text-gray-400 mb-10 max-w-2xl mx-auto" data-aos="fade-up">Brand Mascot ဖြင့် သင့်လုပ်ငန်းကို ပိုမိုသက်ဝင်လှုပ်ရှားစေပါ။</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-panel rounded-xl p-8 hover:border-primary/50 transition-colors" data-aos="fade-right">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-masks-theater text-2xl text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Custom Mascot Design</h4>
+                            <p class="text-gray-400 text-sm">Full Character Development</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-5 border border-white/10 flex justify-between items-center">
+                        <span class="text-gray-300 text-sm"><strong>4 Sides</strong> (Front, Back, Left, Right)</span>
+                        <span class="text-primary font-bold text-lg">500,000 MMK</span>
+                    </div>
+                </div>
+                
+                <div class="glass-panel rounded-xl p-8 hover:border-primary/50 transition-colors" data-aos="fade-left">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mr-4">
+                            <i class="fa-regular fa-face-smile text-2xl text-purple-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Sticker Packages</h4>
+                            <p class="text-gray-400 text-sm">For Viber & Telegram</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 text-gray-300 text-sm mb-6">
+                        <div class="flex justify-between border-b border-white/10 pb-2"><span>10 Stickers</span> <span class="font-bold text-white">80,000 MMK</span></div>
+                        <div class="flex justify-between border-b border-white/10 pb-2"><span>15 Stickers</span> <span class="font-bold text-white">120,000 MMK</span></div>
+                        <div class="flex justify-between pb-2"><span>20 Stickers</span> <span class="font-bold text-white">150,000 MMK</span></div>
+                    </div>
+                    <div class="p-3 bg-blue-900/20 rounded-lg text-xs text-gray-300 border border-blue-800/30">
+                        <i class="fa-solid fa-gear text-primary mr-1"></i> <strong>Setup Fee:</strong> Viber & Telegram Setup - <strong>15,000 MMK</strong>.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section (ဆက်သွယ်ရန်) -->
+    <section id="contact" class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-6">လုပ်ငန်းများ အတူတကွ <span class="text-primary">လက်တွဲလုပ်ကိုင်ရန်</span></h2>
+            <p class="text-gray-300 mb-10 max-w-2xl mx-auto text-lg italic">
+                "I am looking forward to bringing your vision to life. Please feel free to reach out if you have any specific requirements."
+            </p>
+            
+            <!-- Contact Details Box -->
+            <div class="flex flex-col items-center justify-center gap-6 mb-12">
+                <a href="mailto:mr.shinewunnaaung@gmail.com" class="inline-flex items-center px-8 py-4 bg-primary text-white font-medium rounded-lg hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] w-full sm:w-auto justify-center hover:scale-105 duration-300">
+                    <i class="fa-regular fa-paper-plane mr-3 text-xl"></i> Email ပို့ရန်
+                </a>
+                
+                <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-6 text-left sm:text-center mt-6 p-6 glass-panel rounded-xl w-full" data-aos="zoom-in" data-aos-delay="200">
+                    <!-- Primary Email -->
+                    <a href="mailto:mr.shinewunnaaung@gmail.com" class="text-gray-300 hover:text-primary transition-colors flex items-center">
+                        <i class="fa-solid fa-envelope mr-3 text-xl text-primary"></i> mr.shinewunnaaung@gmail.com
+                    </a>
+                    <!-- Upwork Email -->
+                    <a href="mailto:shinewunnaaung.upwork@gmail.com" class="text-gray-300 hover:text-primary transition-colors flex items-center">
+                        <i class="fa-solid fa-envelope mr-3 text-xl text-primary"></i> shinewunnaaung.upwork@gmail.com
+                    </a>
+                    <!-- MM Phone / Viber -->
+                    <a href="viber://chat?number=%2B959408317700" class="text-gray-300 hover:text-primary transition-colors flex items-center">
+                        <i class="fa-brands fa-viber mr-3 text-xl text-primary"></i> +95 940 831 7700 (MM)
+                    </a>
+                    <!-- TH Phone -->
+                    <a href="tel:+66637753678" class="text-gray-300 hover:text-primary transition-colors flex items-center">
+                        <i class="fa-solid fa-phone mr-3 text-xl text-primary"></i> +66 63 775 3678 (TH)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/10 text-center text-gray-400 text-sm glass-panel border-b-0 border-l-0 border-r-0 rounded-none">
+        <p>&copy; 2026 Shine Wunna Aung. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS Animation Script ဖြည့်စွက်ခြင်း -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // AOS ကို စတင်အသက်သွင်းခြင်း
+        AOS.init({
+            once: true, // Scroll ပြန်တင်ရင် Animation ပြန်မပြတော့အောင်
+            offset: 50, // Animation စတင်မည့် နေရာ
+            duration: 800, // Animation ကြာချိန်
+        });
+
+        // Day & Night Mode Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        // Initial icon check
+        if (htmlElement.classList.contains('dark')) {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        }
+
+        // Toggle functionality
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuBtn.querySelector('i');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Menu ခလုတ် နှိပ်လျှင် ပိတ်/ဖွင့် လုပ်ရန်
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            
+            // Icon ပြောင်းရန် (Bars <=> X)
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenuIcon.classList.replace('fa-xmark', 'fa-bars');
+            } else {
+                mobileMenuIcon.classList.replace('fa-bars', 'fa-xmark');
+            }
+        });
+
+        // Link တစ်ခုခုကို နှိပ်လိုက်လျှင် Menu ကို ပြန်ပိတ်ရန်
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                mobileMenuIcon.classList.replace('fa-xmark', 'fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>
