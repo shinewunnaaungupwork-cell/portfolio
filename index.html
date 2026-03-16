@@ -104,7 +104,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
-        /* Smart Text Color Flipping for Light Mode (No need to change HTML classes) */
+        /* Smart Text Color Flipping for Light Mode */
         html:not(.dark) .text-white { color: #0f172a; }
         html:not(.dark) .bg-primary, html:not(.dark) .bg-primary * { color: #ffffff !important; }
         html:not(.dark) .text-gray-400 { color: #475569; }
@@ -139,13 +139,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#home" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">
+                <div class="flex-shrink-0 flex items-center overflow-hidden mr-2">
+                    <a href="#home" class="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500 whitespace-nowrap truncate">
                         Wunna's Portfolio
                     </a>
                 </div>
                 <!-- Desktop Menu & Theme Toggle -->
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
                     <div class="hidden md:flex space-x-8 mr-2 items-center">
                         <a href="#home" class="text-gray-300 hover:text-primary transition-colors">ပင်မစာမျက်နှာ</a>
                         <a href="#about" class="text-gray-300 hover:text-primary transition-colors">ကျွန်တော့်အကြောင်း</a>
@@ -155,12 +155,12 @@
                     </div>
                     
                     <!-- Theme Toggle Button -->
-                    <button id="theme-toggle" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-gray-400 hover:text-primary transition-all shadow-sm">
+                    <button id="theme-toggle" class="w-10 h-10 flex-shrink-0 rounded-full glass-panel flex items-center justify-center text-gray-400 hover:text-primary transition-all shadow-sm">
                         <i id="theme-icon" class="fa-solid fa-moon"></i>
                     </button>
 
                     <!-- Mobile Menu Toggle Button (Hamburger) -->
-                    <button id="mobile-menu-btn" class="md:hidden w-10 h-10 rounded-full glass-panel flex items-center justify-center text-gray-400 hover:text-primary transition-all shadow-sm">
+                    <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex-shrink-0 rounded-full glass-panel flex items-center justify-center text-gray-400 hover:text-primary transition-all shadow-sm">
                         <i class="fa-solid fa-bars text-lg"></i>
                     </button>
                 </div>
@@ -198,7 +198,7 @@
                     <a href="#contact" class="px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-600 transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] text-center hover:-translate-y-1 duration-300">
                         ဆက်သွယ်ရန်
                     </a>
-                    <a href="#projects" class="px-8 py-3 bg-transparent border border-white/20 text-white font-medium rounded-lg hover:bg-white/5 transition-all text-center hover:-translate-y-1 duration-300">
+                    <a href="#projects" class="px-8 py-3 bg-transparent border border-gray-400 text-gray-800 dark:border-white/20 dark:text-white font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-white/5 transition-all text-center hover:-translate-y-1 duration-300">
                         လက်ရာများကြည့်ရန်
                     </a>
                 </div>
@@ -224,8 +224,8 @@
                                 <span class="text-sm font-medium text-gray-300">Sales, Marketing & Key Account Management</span>
                                 <span class="text-sm font-medium text-primary">95%</span>
                             </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                            <div class="w-full bg-gray-200 dark:bg-white/5 rounded-full h-2 overflow-hidden">
+                                <div class="bg-primary h-2 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.6)]" style="width: 95%" data-aos="slide-right" data-aos-duration="1500"></div>
                             </div>
                         </div>
                         <div>
@@ -233,8 +233,8 @@
                                 <span class="text-sm font-medium text-gray-300">Graphic Design, Catalog & Mascot</span>
                                 <span class="text-sm font-medium text-primary">90%</span>
                             </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                            <div class="w-full bg-gray-200 dark:bg-white/5 rounded-full h-2 overflow-hidden">
+                                <div class="bg-primary h-2 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.6)]" style="width: 90%" data-aos="slide-right" data-aos-duration="1500" data-aos-delay="200"></div>
                             </div>
                         </div>
                         <div>
@@ -242,8 +242,8 @@
                                 <span class="text-sm font-medium text-gray-300">E-commerce Team Management</span>
                                 <span class="text-sm font-medium text-primary">95%</span>
                             </div>
-                            <div class="w-full bg-white/5 rounded-full h-2 overflow-hidden">
-                                <div class="bg-primary h-2 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.6)]" style="width: 95%" data-aos="slide-right" data-aos-duration="1500"></div>
+                            <div class="w-full bg-gray-200 dark:bg-white/5 rounded-full h-2 overflow-hidden">
+                                <div class="bg-primary h-2 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.6)]" style="width: 95%" data-aos="slide-right" data-aos-duration="1500" data-aos-delay="400"></div>
                             </div>
                         </div>
                     </div>
@@ -273,7 +273,7 @@
             <div class="max-w-3xl mx-auto mb-12 p-6 glass-panel rounded-xl text-center border-blue-500/20" data-aos="zoom-in" data-aos-delay="200">
                 <p class="text-gray-300 leading-relaxed text-sm md:text-base">
                     <i class="fa-brands fa-viber text-primary text-xl mr-2 mb-2 sm:mb-0 drop-shadow-[0_0_5px_rgba(59,130,246,0.6)]"></i>
-                    Project Design ပုံများနှင့် အသေးစိတ် လက်ရာများကို ကြည့်ရှုလိုပါက Viber <a href="viber://chat?number=%2B959408317700" class="text-white font-bold hover:text-primary transition-colors underline decoration-primary underline-offset-4">(+95 940 831 7700)</a> သို့ တိုက်ရိုက် ဆက်သွယ် မေးမြန်းနိုင်ပါသည်။
+                    Project Design ပုံများနှင့် အသေးစိတ် လက်ရာများကို ကြည့်ရှုလိုပါက Viber <a href="viber://chat?number=%2B959408317700" class="text-primary dark:text-white font-bold hover:text-blue-600 dark:hover:text-primary transition-colors underline decoration-primary underline-offset-4">(+95 940 831 7700)</a> သို့ တိုက်ရိုက် ဆက်သွယ် မေးမြန်းနိုင်ပါသည်။
                 </p>
             </div>
             
@@ -283,8 +283,8 @@
                     <h3 class="text-xl font-bold text-white mb-4">RIVACASE Myanmar</h3>
                     <p class="text-gray-400 text-sm mb-6 leading-relaxed">၂၀၂၂ ခုနှစ်မှ ၂၀၂၄ ခုနှစ်အထိ RIVACASE Myanmar Facebook Page အတွက် Art Design များအားလုံးကို ကိုယ်တိုင် အထူးပြု ဖန်တီးရေးဆွဲခဲ့ပါသည်။</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 text-xs bg-white/5 border border-white/10 text-primary rounded-md font-medium">Graphic Design</span>
-                        <span class="px-3 py-1.5 text-xs bg-white/5 border border-white/10 text-primary rounded-md font-medium">Social Media Art</span>
+                        <span class="px-3 py-1.5 text-xs bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 text-primary rounded-md font-medium">Graphic Design</span>
+                        <span class="px-3 py-1.5 text-xs bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 text-primary rounded-md font-medium">Social Media Art</span>
                     </div>
                 </div>
 
@@ -293,8 +293,8 @@
                     <h3 class="text-xl font-bold text-white mb-4">Midori JLC (Thailand)</h3>
                     <p class="text-gray-400 text-sm mb-6 leading-relaxed">Bangkok မြို့တွင် Co-Founder နှင့် Director of Marketing အဖြစ် ၅ လခန့် တာဝန်ယူတည်ဆောက်ခဲ့ပြီး Graphic Design နှင့် Catalog များ ရေးဆွဲခဲ့ပါသည်။</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 text-xs bg-white/5 border border-white/10 text-primary rounded-md font-medium">Marketing & Branding</span>
-                        <span class="px-3 py-1.5 text-xs bg-white/5 border border-white/10 text-primary rounded-md font-medium">Catalog Design</span>
+                        <span class="px-3 py-1.5 text-xs bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 text-primary rounded-md font-medium">Marketing & Branding</span>
+                        <span class="px-3 py-1.5 text-xs bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 text-primary rounded-md font-medium">Catalog Design</span>
                     </div>
                 </div>
 
@@ -303,8 +303,8 @@
                     <h3 class="text-xl font-bold text-white mb-4">E-commerce Stores & Acer</h3>
                     <p class="text-gray-400 text-sm mb-6 leading-relaxed">Official Store Website များတွင် Key Account Management ကို ဦးဆောင်နေပြီး "RIVACASE" (ဂျာမနီ Brand) ကို တင်သွင်းကာ Brand တာဝန်ခံအနေဖြင့်ပါ ပူးတွဲဆောင်ရွက်လျက်ရှိပါသည်။ "Acer For All" Page အတွက်လည်း Design များ ရေးဆွဲပေးခဲ့ပါသည်။</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 text-xs bg-white/5 border border-white/10 text-primary rounded-md font-medium">E-commerce Lead</span>
-                        <span class="px-3 py-1.5 text-xs bg-white/5 border border-white/10 text-primary rounded-md font-medium">Key Account</span>
+                        <span class="px-3 py-1.5 text-xs bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 text-primary rounded-md font-medium">E-commerce Lead</span>
+                        <span class="px-3 py-1.5 text-xs bg-gray-200 dark:bg-white/5 border border-gray-300 dark:border-white/10 text-primary rounded-md font-medium">Key Account</span>
                     </div>
                 </div>
             </div>
@@ -363,7 +363,7 @@
                 </div>
             </div>
 
-            <!-- 2. Content & 3. Design Side by Side (for larger screens) or Stacked -->
+            <!-- 2. Content & 3. Design Side by Side -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
                 
                 <!-- Content Writing -->
@@ -373,19 +373,19 @@
                     <div class="space-y-4 mb-6">
                         <div class="glass-panel p-5 rounded-xl flex justify-between items-center hover:border-primary/30 transition-colors">
                             <div><div class="text-white font-bold">Starter (8 Posts)</div><div class="text-xs text-gray-400">တစ်ပတ် ၂ ပုဒ်နှုန်း</div></div>
-                            <div class="text-primary font-bold">100,000 MMK</div>
+                            <div class="text-primary font-bold">140,000 MMK</div>
                         </div>
                         <div class="glass-panel p-5 rounded-xl flex justify-between items-center hover:border-primary/30 transition-colors">
                             <div><div class="text-white font-bold">Growth (12 Posts)</div><div class="text-xs text-gray-400">တစ်ပတ် ၃ ပုဒ်နှုန်း</div></div>
-                            <div class="text-primary font-bold">170,000 MMK</div>
+                            <div class="text-primary font-bold">220,000 MMK</div>
                         </div>
                         <div class="glass-panel p-5 rounded-xl flex justify-between items-center border border-primary/20 hover:border-primary/50 transition-colors">
                             <div><div class="text-white font-bold">Professional (20 Posts)</div><div class="text-xs text-gray-400">တစ်ပတ် ၅ ပုဒ်နှုန်း</div></div>
-                            <div class="text-primary font-bold">280,000 MMK</div>
+                            <div class="text-primary font-bold">350,000 MMK</div>
                         </div>
                     </div>
                     <div class="bg-blue-900/10 border border-blue-800/30 p-4 rounded-lg text-sm text-gray-300">
-                        <span class="text-primary font-semibold">သီးသန့် (တစ်ပုဒ်ချင်း):</span> Standard Post - 15,000 MMK | Storytelling - 40,000 MMK
+                        <span class="text-primary font-semibold">သီးသန့် (တစ်ပုဒ်ချင်း):</span> 20,000 MMK | Story Telling - 40,000 MMK
                     </div>
                 </div>
 
@@ -396,26 +396,26 @@
                     <div class="space-y-4 mb-6">
                         <div class="glass-panel p-5 rounded-xl flex justify-between items-center hover:border-primary/30 transition-colors">
                             <div><div class="text-white font-bold">Starter (8 Designs)</div><div class="text-xs text-gray-400">Basic Package</div></div>
-                            <div class="text-primary font-bold">140,000 MMK</div>
+                            <div class="text-primary font-bold">230,000 MMK</div>
                         </div>
                         <div class="glass-panel p-5 rounded-xl flex justify-between items-center hover:border-primary/30 transition-colors">
                             <div><div class="text-white font-bold">Growth (12 Designs)</div><div class="text-xs text-gray-400">Standard Package</div></div>
-                            <div class="text-primary font-bold">220,000 MMK</div>
+                            <div class="text-primary font-bold">340,000 MMK</div>
                         </div>
                         <div class="glass-panel p-5 rounded-xl flex justify-between items-center border border-primary/20 hover:border-primary/50 transition-colors">
                             <div><div class="text-white font-bold">Professional (20 Designs)</div><div class="text-xs text-gray-400">Premium Package</div></div>
-                            <div class="text-primary font-bold">350,000 MMK</div>
+                            <div class="text-primary font-bold">560,000 MMK</div>
                         </div>
                     </div>
                     <div class="bg-blue-900/10 border border-blue-800/30 p-4 rounded-lg text-sm text-gray-300">
-                        <span class="text-primary font-semibold">သီးသန့် (တစ်ပုံချင်း):</span> 20,000 MMK ဝန်းကျင် <span class="text-xs text-gray-500">(Layout အပေါ်မူတည်၍)</span>
+                        <span class="text-primary font-semibold">သီးသန့် (တစ်ပုံချင်း):</span> 30,000 MMK + <span class="text-xs text-gray-500 dark:text-gray-400">(Layout ပေါ် မူတည်၍ အနည်းငယ် ပိုကျသင့်နိုင်ပါသည်။)</span>
                     </div>
                 </div>
             </div>
 
-            <!-- 4. All-in-One Combo [BEST VALUE] -->
+            <!-- 4. Social Combo [BEST VALUE] -->
             <div class="mb-20" data-aos="zoom-in">
-                <div class="glass-panel rounded-2xl p-1 border border-yellow-500/30 bg-gradient-to-br from-yellow-500/10 to-transparent">
+                <div class="glass-panel rounded-2xl p-1 border border-yellow-500/30 bg-gray-50 dark:bg-transparent dark:bg-gradient-to-br dark:from-yellow-500/10 dark:to-transparent">
                     <div class="p-8 md:p-10">
                         <div class="flex flex-col md:flex-row justify-center items-center mb-8 text-center md:text-left">
                             <i class="fa-solid fa-star text-4xl text-yellow-500 mb-4 md:mb-0 md:mr-4 drop-shadow-[0_0_15px_rgba(234,179,8,0.6)]"></i>
@@ -428,26 +428,26 @@
                         
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <!-- Combo 1 -->
-                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-colors">
+                            <div class="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-6 text-center hover:bg-gray-200 dark:hover:bg-white/10 transition-colors">
                                 <h4 class="text-white font-bold mb-2">Starter Combo</h4>
                                 <p class="text-xs text-gray-400 mb-4">8 Posts + 8 Designs</p>
-                                <div class="text-2xl font-bold text-primary mb-2">220,000 <span class="text-sm">MMK</span></div>
-                                <div class="inline-block bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">20,000 သက်သာ</div>
+                                <div class="text-2xl font-bold text-primary mb-2">350,000 <span class="text-sm">MMK</span></div>
+                                <div class="inline-block bg-green-500/20 text-green-500 dark:text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">20,000 သက်သာ</div>
                             </div>
                             <!-- Combo 2 -->
-                            <div class="bg-white/5 border border-yellow-500/30 rounded-xl p-6 text-center hover:bg-white/10 transition-colors relative shadow-[0_0_15px_rgba(234,179,8,0.1)]">
-                                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-dark text-xs font-bold px-3 py-1 rounded-full">Most Popular</div>
+                            <div class="bg-yellow-50 dark:bg-white/5 border border-yellow-400 dark:border-yellow-500/30 rounded-xl p-6 text-center hover:bg-yellow-100 dark:hover:bg-white/10 transition-colors relative shadow-[0_0_15px_rgba(234,179,8,0.1)]">
+                                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white dark:text-dark text-xs font-bold px-3 py-1 rounded-full">Most Popular</div>
                                 <h4 class="text-white font-bold mb-2 mt-2">Growth Combo</h4>
                                 <p class="text-xs text-gray-400 mb-4">12 Posts + 12 Designs</p>
-                                <div class="text-2xl font-bold text-yellow-400 mb-2">330,000 <span class="text-sm">MMK</span></div>
-                                <div class="inline-block bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">40,000 သက်သာ</div>
+                                <div class="text-2xl font-bold text-yellow-500 dark:text-yellow-400 mb-2">540,000 <span class="text-sm">MMK</span></div>
+                                <div class="inline-block bg-green-500/20 text-green-500 dark:text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">40,000 သက်သာ</div>
                             </div>
                             <!-- Combo 3 -->
-                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-colors">
+                            <div class="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-6 text-center hover:bg-gray-200 dark:hover:bg-white/10 transition-colors">
                                 <h4 class="text-white font-bold mb-2">Professional Combo</h4>
                                 <p class="text-xs text-gray-400 mb-4">20 Posts + 20 Designs</p>
-                                <div class="text-2xl font-bold text-primary mb-2">540,000 <span class="text-sm">MMK</span></div>
-                                <div class="inline-block bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">90,000 သက်သာ</div>
+                                <div class="text-2xl font-bold text-primary mb-2">820,000 <span class="text-sm">MMK</span></div>
+                                <div class="inline-block bg-green-500/20 text-green-500 dark:text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30">90,000 သက်သာ</div>
                             </div>
                         </div>
                     </div>
@@ -468,8 +468,8 @@
                             <p class="text-gray-400 text-sm">Full Character Development</p>
                         </div>
                     </div>
-                    <div class="bg-white/5 rounded-lg p-5 border border-white/10 flex justify-between items-center">
-                        <span class="text-gray-300 text-sm"><strong>4 Sides</strong> (Front, Back, Left, Right)</span>
+                    <div class="bg-gray-100 dark:bg-white/5 rounded-lg p-5 border border-gray-200 dark:border-white/10 flex justify-between items-center">
+                        <span class="text-gray-400 dark:text-gray-300 text-sm"><strong>4 Sides</strong> (Front, Back, Left, Right)</span>
                         <span class="text-primary font-bold text-lg">500,000 MMK</span>
                     </div>
                 </div>
@@ -477,19 +477,19 @@
                 <div class="glass-panel rounded-xl p-8 hover:border-primary/50 transition-colors" data-aos="fade-left">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mr-4">
-                            <i class="fa-regular fa-face-smile text-2xl text-purple-400"></i>
+                            <i class="fa-regular fa-face-smile text-2xl text-purple-500 dark:text-purple-400"></i>
                         </div>
                         <div>
                             <h4 class="text-xl font-bold text-white">Sticker Packages</h4>
                             <p class="text-gray-400 text-sm">For Viber & Telegram</p>
                         </div>
                     </div>
-                    <div class="space-y-3 text-gray-300 text-sm mb-6">
-                        <div class="flex justify-between border-b border-white/10 pb-2"><span>10 Stickers</span> <span class="font-bold text-white">80,000 MMK</span></div>
-                        <div class="flex justify-between border-b border-white/10 pb-2"><span>15 Stickers</span> <span class="font-bold text-white">120,000 MMK</span></div>
+                    <div class="space-y-3 text-gray-400 dark:text-gray-300 text-sm mb-6">
+                        <div class="flex justify-between border-b border-gray-200 dark:border-white/10 pb-2"><span>10 Stickers</span> <span class="font-bold text-white">80,000 MMK</span></div>
+                        <div class="flex justify-between border-b border-gray-200 dark:border-white/10 pb-2"><span>15 Stickers</span> <span class="font-bold text-white">120,000 MMK</span></div>
                         <div class="flex justify-between pb-2"><span>20 Stickers</span> <span class="font-bold text-white">150,000 MMK</span></div>
                     </div>
-                    <div class="p-3 bg-blue-900/20 rounded-lg text-xs text-gray-300 border border-blue-800/30">
+                    <div class="p-3 bg-blue-900/10 dark:bg-blue-900/20 rounded-lg text-xs text-gray-400 dark:text-gray-300 border border-blue-800/20 dark:border-blue-800/30">
                         <i class="fa-solid fa-gear text-primary mr-1"></i> <strong>Setup Fee:</strong> Viber & Telegram Setup - <strong>15,000 MMK</strong>.
                     </div>
                 </div>
@@ -502,7 +502,7 @@
     <section id="contact" class="py-20 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
             <h2 class="text-3xl font-bold mb-6">လုပ်ငန်းများ အတူတကွ <span class="text-primary">လက်တွဲလုပ်ကိုင်ရန်</span></h2>
-            <p class="text-gray-300 mb-10 max-w-2xl mx-auto text-lg italic">
+            <p class="text-gray-400 dark:text-gray-300 mb-10 max-w-2xl mx-auto text-lg italic">
                 "I am looking forward to bringing your vision to life. Please feel free to reach out if you have any specific requirements."
             </p>
             
@@ -514,19 +514,19 @@
                 
                 <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-6 text-left sm:text-center mt-6 p-6 glass-panel rounded-xl w-full" data-aos="zoom-in" data-aos-delay="200">
                     <!-- Primary Email -->
-                    <a href="mailto:mr.shinewunnaaung@gmail.com" class="text-gray-300 hover:text-primary transition-colors flex items-center">
+                    <a href="mailto:mr.shinewunnaaung@gmail.com" class="text-gray-400 dark:text-gray-300 hover:text-primary transition-colors flex items-center">
                         <i class="fa-solid fa-envelope mr-3 text-xl text-primary"></i> mr.shinewunnaaung@gmail.com
                     </a>
                     <!-- Upwork Email -->
-                    <a href="mailto:shinewunnaaung.upwork@gmail.com" class="text-gray-300 hover:text-primary transition-colors flex items-center">
+                    <a href="mailto:shinewunnaaung.upwork@gmail.com" class="text-gray-400 dark:text-gray-300 hover:text-primary transition-colors flex items-center">
                         <i class="fa-solid fa-envelope mr-3 text-xl text-primary"></i> shinewunnaaung.upwork@gmail.com
                     </a>
                     <!-- MM Phone / Viber -->
-                    <a href="viber://chat?number=%2B959408317700" class="text-gray-300 hover:text-primary transition-colors flex items-center">
+                    <a href="viber://chat?number=%2B959408317700" class="text-gray-400 dark:text-gray-300 hover:text-primary transition-colors flex items-center">
                         <i class="fa-brands fa-viber mr-3 text-xl text-primary"></i> +95 940 831 7700 (MM)
                     </a>
                     <!-- TH Phone -->
-                    <a href="tel:+66637753678" class="text-gray-300 hover:text-primary transition-colors flex items-center">
+                    <a href="tel:+66637753678" class="text-gray-400 dark:text-gray-300 hover:text-primary transition-colors flex items-center">
                         <i class="fa-solid fa-phone mr-3 text-xl text-primary"></i> +66 63 775 3678 (TH)
                     </a>
                 </div>
@@ -535,7 +535,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 border-t border-white/10 text-center text-gray-400 text-sm glass-panel border-b-0 border-l-0 border-r-0 rounded-none">
+    <footer class="py-8 border-t border-gray-200 dark:border-white/10 text-center text-gray-400 text-sm glass-panel border-b-0 border-l-0 border-r-0 rounded-none">
         <p>&copy; 2026 Shine Wunna Aung. All rights reserved.</p>
     </footer>
 
